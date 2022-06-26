@@ -216,7 +216,7 @@ export namespace moneyMarket {
      */
     export interface ConfigResponse {
       owner_addr: HumanAddr;
-      aterra_contract: HumanAddr;
+      acndl_contract: HumanAddr;
       interest_model: HumanAddr;
       distribution_model: HumanAddr;
       overseer_contract: HumanAddr;
@@ -241,7 +241,7 @@ export namespace moneyMarket {
      */
     export interface EpochStateResponse {
       exchange_rate: ZED;
-      aterra_supply: Num;
+      acndl_supply: Num; //       aterra_supply: Num;
     }
 
     /**

@@ -24,7 +24,7 @@ export const links = {
   whitepaper: 'https://zed.network/docs/zed-v1.1.pdf',
   discord: 'https://discord.gg/9aUYgpKZ9c',
   forum: 'https://forum.zed.network/',
-  terra: 'https://terra.money/',
+  candle: 'https://candlelabs.org/',
 };
 
 // force build : 21.08.24
