@@ -1,4 +1,4 @@
-# https://anchorprotocol.com
+# https://zed.network
 
 Anchor Website
 

@@ -5,7 +5,7 @@ import {
   Num,
   Rate,
   u,
-  UST,
+  ZED,
 } from '@libs/types';
 
 export namespace liquidation {
@@ -24,7 +24,7 @@ export namespace liquidation {
     export interface BidResponse {
       collateral_token: HumanAddr;
       bidder: HumanAddr;
-      amount: u<UST>;
+      amount: u<ZED>;
       premium_rate: Rate;
     }
 
@@ -90,15 +90,15 @@ export namespace liquidation {
      */
     export interface LiquidationAmount {
       liquidation_amount: {
-        borrow_amount: u<UST>;
-        borrow_limit: u<UST>;
+        borrow_amount: u<ZED>;
+        borrow_limit: u<ZED>;
         collaterals: [
-          [CW20Addr, u<UST>], // (Cw20 contract address, Locked amount)
-          [CW20Addr, u<UST>],
+          [CW20Addr, u<ZED>], // (Cw20 contract address, Locked amount)
+          [CW20Addr, u<ZED>],
         ];
         collateral_prices: [
-          u<UST>, // Price of collateral
-          u<UST>,
+          u<ZED>, // Price of collateral
+          u<ZED>,
         ];
       };
     }
@@ -107,7 +107,7 @@ export namespace liquidation {
      * @see https://anchor-protocol.gitbook.io/anchor-2/smart-contracts/liquidations/liquidation-contract#liquidationamountresponse
      */
     export interface LiquidationAmountResponse {
-      collaterals: Array<[CW20Addr, u<UST>]>;
+      collaterals: Array<[CW20Addr, u<ZED>]>;
     }
   }
 }

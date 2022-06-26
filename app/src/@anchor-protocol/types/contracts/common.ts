@@ -2,7 +2,7 @@ import { COLLATERAL_DENOMS } from '@anchor-protocol/anchor.js';
 import { CW20Addr, HumanAddr } from '@libs/types';
 
 export enum CollateralType {
-  bLuna = 'bLuna',
+  bCandle = 'bCandle',
   bEth = 'bEth',
 }
 
@@ -14,7 +14,7 @@ export interface CollateralInfo {
 }
 
 export interface ContractAddress {
-  bluna: {
+  bcandle: {
     /** addressProvider.bLunaReward() */
     reward: HumanAddr;
     /** addressProvider.bLunaHub() */
@@ -74,16 +74,16 @@ export interface ContractAddress {
   };
   cw20: {
     /** addressProvider.bLunaToken() */
-    bLuna: CW20Addr;
+    bCandle: CW20Addr;
     /** addressProvider.bEthToken() */
     bEth: CW20Addr;
     /** addressProvider.aTerra() */
-    aUST: CW20Addr;
+    aZED: CW20Addr;
     /** addressProvider.ANC() */
     ANC: CW20Addr;
     /** addressProvider.terraswapbAncUstLPToken() */
     AncUstLP: CW20Addr;
     /** addressProvider.terraswapblunaLunaLPToken() */
-    bLunaLunaLP: CW20Addr;
+    bCandleCandleLP: CW20Addr;
   };
 }

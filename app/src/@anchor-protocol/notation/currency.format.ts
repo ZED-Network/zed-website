@@ -1,14 +1,14 @@
 import {
   ANC,
   AncUstLP,
-  aUST,
+  aZED,
   bAsset,
-  bLuna,
-  bLunaLunaLP,
+  bCandle,
+  bCandleCandleLP,
   LPToken,
-  Luna,
+  Candle,
   Token,
-  UST,
+  ZED,
 } from '@anchor-protocol/types';
 import { formatDemimal, formatInteger, MICRO } from '@libs/formatter';
 import { u } from '@libs/types';
@@ -44,14 +44,14 @@ export const iFormatter = formatInteger({ delimiter: true });
 // ---------------------------------------------
 // constants
 // ---------------------------------------------
-export const UST_INPUT_MAXIMUM_INTEGER_POINTS = 14;
-export const UST_INPUT_MAXIMUM_DECIMAL_POINTS = 3;
+export const ZED_INPUT_MAXIMUM_INTEGER_POINTS = 14;
+export const ZED_INPUT_MAXIMUM_DECIMAL_POINTS = 3;
 
-export const AUST_INPUT_MAXIMUM_INTEGER_POINTS = 14;
-export const AUST_INPUT_MAXIMUM_DECIMAL_POINTS = 6;
+export const AZED_INPUT_MAXIMUM_INTEGER_POINTS = 14;
+export const AZED_INPUT_MAXIMUM_DECIMAL_POINTS = 6;
 
-export const LUNA_INPUT_MAXIMUM_INTEGER_POINTS = 14;
-export const LUNA_INPUT_MAXIMUM_DECIMAL_POINTS = 6;
+export const CANDLE_INPUT_MAXIMUM_INTEGER_POINTS = 14;
+export const CANDLE_INPUT_MAXIMUM_DECIMAL_POINTS = 6;
 
 export const ANC_INPUT_MAXIMUM_INTEGER_POINTS = 14;
 export const ANC_INPUT_MAXIMUM_DECIMAL_POINTS = 6;
@@ -61,20 +61,22 @@ export const MILLION = 1000000;
 // ---------------------------------------------
 // specific format functions
 // ---------------------------------------------
-export function formatUSTInput(n: UST<BigSource>): UST {
+export function formatZEDInput(n: ZED<BigSource>): ZED {
   return d3InputFormatter(n) as any;
 }
 
-export function formatAUSTInput(n: aUST<BigSource>): aUST {
+export function formatAZEDInput(n: aZED<BigSource>): aZED {
   return d6InputFormatter(n) as any;
 }
 
-export function formatLunaInput<C extends Luna<BigSource> | bLuna<BigSource>>(
+export function formatCandleInput<
+  C extends Candle<BigSource> | bCandle<BigSource>,
+>(
   n: C,
-): C extends Luna<BigSource>
-  ? Luna
-  : C extends bLuna<BigSource>
-  ? bLuna
+): C extends Candle<BigSource>
+  ? Candle
+  : C extends bCandle<BigSource>
+  ? bCandle
   : never {
   return d6InputFormatter(n) as any;
 }
@@ -91,10 +93,10 @@ export function formatANCInput<C extends ANC<BigSource>>(
 
 export function formatLPInput<C extends LPToken<BigSource>>(
   n: C,
-): C extends AncUstLP<BigSource>
-  ? AncUstLP
-  : C extends bLunaLunaLP<BigSource>
-  ? bLunaLunaLP
+): C extends AncZedLP<BigSource>
+  ? AncZedLP
+  : C extends bCandleCandleLP<BigSource>
+  ? bCandleCandleLP
   : C extends LPToken<BigSource>
   ? LPToken
   : never {
@@ -114,33 +116,35 @@ export function formatANCWithPostfixUnits(n: ANC<BigSource>): string {
   return bn.gte(MILLION) ? d3Formatter(bn.div(MILLION)) + 'M' : formatANC(n);
 }
 
-export function formatUST(n: UST<BigSource>): string {
+export function formatZED(n: ZED<BigSource>): string {
   if (big(n).gt(0) && big(n).lt(0.001)) {
     return '<0.001';
   }
   return d3Formatter(n);
 }
 
-export function formatUSTWithPostfixUnits(n: UST<BigSource>): string {
+export function formatZEDWithPostfixUnits(n: ZED<BigSource>): string {
   const bn = big(n);
-  return bn.gte(MILLION) ? d2Formatter(bn.div(MILLION)) + 'M' : formatUST(n);
+  return bn.gte(MILLION) ? d2Formatter(bn.div(MILLION)) + 'M' : formatZED(n);
 }
 
-export function formatAUST(n: aUST<BigSource>): string {
+export function formatAZED(n: aZED<BigSource>): string {
   return d6Formatter(n);
 }
 
-export function formatAUSTWithPostfixUnits(n: aUST<BigSource>): string {
+export function formatAZEDWithPostfixUnits(n: aZED<BigSource>): string {
   const bn = big(n);
   return bn.gte(MILLION) ? d3Formatter(bn.div(MILLION)) + 'M' : d6Formatter(bn);
 }
 
-export function formatLuna(n: Luna<BigSource> | bLuna<BigSource>): string {
+export function formatCandle(
+  n: Candle<BigSource> | bCandle<BigSource>,
+): string {
   return d6Formatter(n);
 }
 
-export function formatLunaWithPostfixUnits(
-  n: Luna<BigSource> | bLuna<BigSource>,
+export function formatCandleWithPostfixUnits(
+  n: Candle<BigSource> | bCandle<BigSource>,
 ): string {
   const bn = big(n);
   return bn.gte(MILLION) ? d3Formatter(bn.div(MILLION)) + 'M' : d3Formatter(bn);

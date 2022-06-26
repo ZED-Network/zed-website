@@ -3,13 +3,13 @@ import {
   DateTime,
   Denom,
   HumanAddr,
-  Luna,
+  Candle,
   Num,
   Rate,
   Token,
   u,
 } from '@libs/types';
-import { bLuna } from '../currencies';
+import { bCandle } from '../currencies';
 
 export namespace bluna {
   export namespace airdropRegistry {
@@ -87,7 +87,7 @@ export namespace bluna {
       history: Array<{
         batch_id: number;
         time: DateTime;
-        amount: u<bLuna>;
+        amount: u<bCandle>;
         applied_exchange_rate: Rate;
         withdraw_rate: Rate;
         released: boolean;
@@ -123,7 +123,7 @@ export namespace bluna {
      */
     export interface CurrentBatchResponse {
       id: number;
-      requested_with_fee: u<bLuna>;
+      requested_with_fee: u<bCandle>;
     }
 
     /**
@@ -157,10 +157,10 @@ export namespace bluna {
      */
     export interface StateResponse {
       exchange_rate: Rate;
-      total_bond_amount: u<Luna>;
+      total_bond_amount: u<Candle>;
       last_index_modification: DateTime;
-      prev_hub_balance: u<Luna>;
-      actual_unbonded_amount: u<Luna>;
+      prev_hub_balance: u<Candle>;
+      actual_unbonded_amount: u<Candle>;
       last_unbonded_time: DateTime;
       last_processed_batch: number;
     }
@@ -179,7 +179,7 @@ export namespace bluna {
      */
     export interface UnbondRequestsResponse {
       address: HumanAddr;
-      requests: Array<[number, u<bLuna>]>;
+      requests: Array<[number, u<bCandle>]>;
     }
 
     /**
@@ -210,7 +210,7 @@ export namespace bluna {
      * @see https://anchor-protocol.gitbook.io/anchor-2/smart-contracts/bluna/hub-1#withdrawableunbondedresponse
      */
     export interface WithdrawableUnbondedResponse {
-      withdrawable: u<Luna>;
+      withdrawable: u<Candle>;
     }
   }
 
@@ -260,7 +260,7 @@ export namespace bluna {
      */
     export interface HolderResponse {
       address: HumanAddr;
-      balance: u<bLuna>;
+      balance: u<bCandle>;
       index: Num;
       pending_rewards: u<Token>; // depends on reward_denom of ConfigResponse
     }
@@ -294,7 +294,7 @@ export namespace bluna {
      */
     export interface StateResponse {
       global_index: Num;
-      total_balance: u<bLuna>;
+      total_balance: u<bCandle>;
     }
   }
 }

@@ -7,7 +7,7 @@ export type NoMicro = { __micro?: false };
 export type Gas<T = number> = T & NominalType<'gas'>;
 
 // Native currencies
-export type UST<T = string> = T & NominalType<'ust'>;
+export type ZED<T = string> = T & NominalType<'zed'>;
 export type AUD<T = string> = T & NominalType<'aud'>;
 export type CAD<T = string> = T & NominalType<'cad'>;
 export type CHF<T = string> = T & NominalType<'chf'>;
@@ -28,13 +28,13 @@ export type SEK<T = string> = T & NominalType<'sek'>;
 export type SGD<T = string> = T & NominalType<'sgd'>;
 export type THB<T = string> = T & NominalType<'thb'>;
 export type KRT<T = string> = T & NominalType<'krt'>;
-export type Luna<T = string> = T & NominalType<'luna'>;
+export type Candle<T = string> = T & NominalType<'cndl'>;
 
 // LP currencies
 export type LP<T = string> = T & NominalType<'lp'>;
 
 // Union currencies
-export type NativeToken<T = string> = T & NominalType<'ust' | 'krt' | 'luna'>;
+export type NativeToken<T = string> = T & NominalType<'zed' | 'krt' | 'cndl'>;
 
 // All currencies
 export type Token<T = string> = T & NominalType<string>;

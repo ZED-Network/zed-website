@@ -15,16 +15,15 @@ export const landingMobileLayout = 680;
 export const headerHeight = 84;
 
 export const links = {
-  developers: 'https://docs.anchorprotocol.com/developers-earn/anchor-earn-sdk',
-  app: 'https://app.anchorprotocol.com',
-  betterYield: 'https://docs.anchorprotocol.com/protocol/overview',
-  easierIntegration:
-    'https://docs.anchorprotocol.com/developers-earn/anchor-earn-sdk',
-  frictionlessAccess: 'https://app.anchorprotocol.com',
-  contact: 'mailto:info@anchorprotocol.com',
-  whitepaper: 'https://anchorprotocol.com/docs/anchor-v1.1.pdf',
+  developers: 'https://docs.zed.network/developers-earn/anchor-earn-sdk',
+  app: 'https://app.zed.network',
+  betterYield: 'https://docs.zed.network/protocol/overview',
+  easierIntegration: 'https://docs.zed.network/developers-earn/anchor-earn-sdk',
+  frictionlessAccess: 'https://app.zed.network',
+  contact: 'mailto:info@zed.network',
+  whitepaper: 'https://zed.network/docs/zed-v1.1.pdf',
   discord: 'https://discord.gg/9aUYgpKZ9c',
-  forum: 'https://forum.anchorprotocol.com/',
+  forum: 'https://forum.zed.network/',
   terra: 'https://terra.money/',
 };
 

@@ -6,7 +6,7 @@ import {
   Num,
   Rate,
   u,
-  UST,
+  ZED,
 } from '@libs/types';
 import { ANC, aToken, bAsset } from '../currencies';
 
@@ -26,8 +26,8 @@ export namespace moneyMarket {
      */
     export interface BorrowerResponse {
       borrower: HumanAddr;
-      balance: u<UST>;
-      spendable: u<UST>;
+      balance: u<ZED>;
+      spendable: u<ZED>;
     }
 
     /**
@@ -127,9 +127,9 @@ export namespace moneyMarket {
      */
     export interface BorrowRate {
       borrow_rate: {
-        market_balance: u<UST>;
-        total_liabilities: u<UST>;
-        total_reserves: u<UST>;
+        market_balance: u<ZED>;
+        total_liabilities: u<ZED>;
+        total_reserves: u<ZED>;
       };
     }
 
@@ -183,7 +183,7 @@ export namespace moneyMarket {
       borrower: HumanAddr;
       interest_index: Num;
       reward_index: Num;
-      loan_amount: u<UST>;
+      loan_amount: u<ZED>;
       pending_rewards: u<ANC>;
     }
 
@@ -240,7 +240,7 @@ export namespace moneyMarket {
      * @see https://anchor-protocol.gitbook.io/anchor-2/smart-contracts/money-market/market#epochstateresponse
      */
     export interface EpochStateResponse {
-      exchange_rate: UST;
+      exchange_rate: ZED;
       aterra_supply: Num;
     }
 
@@ -255,8 +255,8 @@ export namespace moneyMarket {
      * @see https://anchor-protocol.gitbook.io/anchor-2/smart-contracts/money-market/market#stateresponse
      */
     export interface StateResponse {
-      total_liabilities: u<UST>;
-      total_reserves: u<UST>;
+      total_liabilities: u<ZED>;
+      total_reserves: u<ZED>;
       last_interest_updated: number;
       last_reward_updated: number;
       global_interest_index: Num;
@@ -322,7 +322,7 @@ export namespace moneyMarket {
      * @see https://anchor-protocol.gitbook.io/anchor-2/smart-contracts/money-market/oracle#priceresponse
      */
     export interface PriceResponse {
-      rate: UST;
+      rate: ZED;
       last_updated_base: number;
       last_updated_quote: number;
     }
@@ -343,7 +343,7 @@ export namespace moneyMarket {
     export interface PricesResponse {
       prices: Array<{
         asset: CW20Addr;
-        price: UST;
+        price: ZED;
         last_updated_time: number;
       }>;
     }
@@ -515,7 +515,7 @@ export namespace moneyMarket {
     }
 
     /**
-     * @see https://docs.anchorprotocol.com/smart-contracts/money-market/overseer#whitelist
+     * @see https://docs.zed.network/smart-contracts/money-market/overseer#whitelist
      */
     export interface RegisterWhitelist {
       whitelist: {
