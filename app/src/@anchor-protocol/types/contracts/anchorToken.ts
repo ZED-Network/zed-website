@@ -6,7 +6,7 @@ import {
   Rate,
   u,
 } from '@libs/types';
-import { ANC, AncUstLP } from '../currencies';
+import { ANC, AncZedLP } from '../currencies';
 import { moneyMarket } from './moneyMarket';
 
 export namespace anchorToken {
@@ -272,7 +272,7 @@ export namespace anchorToken {
     export interface StakerInfoResponse {
       staker: HumanAddr;
       reward_index: Num;
-      bond_amount: u<AncUstLP>;
+      bond_amount: u<AncZedLP>;
       pending_reward: u<ANC>;
     }
 
@@ -290,7 +290,7 @@ export namespace anchorToken {
      */
     export interface StateResponse {
       last_distributed: number;
-      total_bond_amount: u<AncUstLP>;
+      total_bond_amount: u<AncZedLP>;
       global_reward_index: Num;
     }
   }

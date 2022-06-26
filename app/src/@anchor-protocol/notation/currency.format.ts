@@ -1,6 +1,6 @@
 import {
   ANC,
-  AncUstLP,
+  AncZedLP,
   aZED,
   bAsset,
   bCandle,

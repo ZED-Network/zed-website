@@ -82,7 +82,7 @@ export interface ContractAddress {
     /** addressProvider.ANC() */
     ANC: CW20Addr;
     /** addressProvider.terraswapbAncUstLPToken() */
-    AncUstLP: CW20Addr;
+    AncZedLP: CW20Addr;
     /** addressProvider.terraswapblunaLunaLPToken() */
     bCandleCandleLP: CW20Addr;
   };
